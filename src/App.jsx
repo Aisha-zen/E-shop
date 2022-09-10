@@ -16,50 +16,8 @@ import Wishlist from './pages/Wishlist';
 import PurchaseComplete from './pages/PurchaseComplete';
 import PaymentDetails from './pages/PaymentDetails';
 import ProtectedRoute from './components/ProtectedRoute';
-import axios from 'axios';
-import { useCart } from './components/context/CartContext';
 
 const App = () => {
-  const { setCartItems } = useCart();
-
-  useEffect(() => {
-    const rehydrateCart = async () => {
-      const token = localStorage.getItem('token'); // Get the JWT token from localStorage
-
-      if (token) {
-        try {
-          const response = await axios.get('/cart', {
-            headers: { Authorization: `Bearer ${token}` } // Send token in request headers
-          });
-          localStorage.setItem('cartItems', JSON.stringify(response.data)); // Store cart data in localStorage
-          setCartItems(response.data); // Update the cart state
-        } catch (error) {
-          console.error('Failed to rehydrate cart:', error); // Handle errors
-        }
-      }
-    };
-
-    rehydrateCart(); // Call the function to rehydrate cart on app load
-  }, [setCartItems]); // Dependency array ensures the effect runs only when setCartItems changes
-
-  useEffect(() => {
-    const loadCart = async () => {
-      const token = localStorage.getItem('token');
-      if (token) {
-        try {
-          const response = await axios.get('/cart', {
-            headers: { Authorization: `Bearer ${token}` }
-          });
-          setCartItems(response.data); // Update cart state
-        } catch (error) {
-          console.error('Failed to load cart:', error);
-        }
-      }
-    };
-
-    loadCart(); // Load cart on app start
-  }, [setCartItems]);
-
 
 
   

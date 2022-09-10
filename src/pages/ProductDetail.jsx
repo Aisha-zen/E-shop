@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'
+import '../App.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../components/context/CartContext';
 import { FaStar } from 'react-icons/fa';
-import productsData from '../data/product.json';
+import axios from 'axios';
 
-const ProductDetail = () => {
-  const { id } = useParams();
+const ProductDetail = ({ userToken }) => {
+  const { id } = useParams(); // Getting product ID from the route
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -14,22 +14,44 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
   const [flyerPosition, setFlyerPosition] = useState({ top: 0, left: 0 });
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Scroll to the top of the page when the id changes
-    window.scrollTo(0, 0);
+    const fetchProductDetails = async () => {
+      try {
+        setLoading(true);
+        // Fetching the product detail by ID
+        const response = await axios.get(
+          `https://e-shop-ochre-pi.vercel.app/api/product/${id}/`,
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`, // Include user token for authenticated requests
+            },
+          }
+        );
+        const productData = response.data;
+        setProduct(productData);
 
-    const foundProduct = productsData.products.find((product) => product.id === parseInt(id));
-    if (foundProduct) {
-      setProduct(foundProduct);
-      const related = productsData.products.filter(
-        (item) => item.category === foundProduct.category && item.id !== foundProduct.id
-      );
-      setRelatedProducts(related);
-    } else {
-      console.error('Product not found');
-    }
-  }, [id]);
+        // Fetch related products based on category (assuming API provides this info)
+        const relatedResponse = await axios.get(
+          `https://e-shop-ochre-pi.vercel.app/api/products/`
+        );
+        const allProducts = relatedResponse.data.products;
+        const related = allProducts.filter(
+          (item) => item.category === productData.category && item.id !== productData.id
+        );
+        setRelatedProducts(related);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching product details:', error);
+        setError('Failed to load product details.');
+        setLoading(false);
+      }
+    };
+
+    fetchProductDetails();
+  }, [id, userToken]);
 
   const handleAddToCart = (event) => {
     const { top, left } = event.target.getBoundingClientRect();
@@ -49,12 +71,16 @@ const ProductDetail = () => {
     navigate(`/products/${relatedProductId}`);
   };
 
-  if (!product) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
-    <div className="container mx-auto px-4 py-10 mt-40 ">
+    <div className="container mx-auto px-4 py-10 mt-40">
       <div className="flex flex-col md:flex-row md:space-x-8">
         <div className="flex-1">
           <div className="w-full h-96 overflow-hidden rounded-lg shadow-lg">
@@ -104,7 +130,6 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      {/* Animation Element */}
       {isAnimating && (
         <div
           className="fixed z-50 w-16 h-16 bg-secondary rounded-full transition-transform duration-200 ease-in-out"
@@ -121,30 +146,10 @@ const ProductDetail = () => {
         <h2 className="text-2xl font-bold mb-4">Product Details</h2>
         <ul className="list-disc list-inside text-lg text-gray-700">
           <li>Category: {product.category}</li>
-          {/* Add more specifications here */}
           <li>Weight: 500g</li>
           <li>Dimensions: 10x20x30 cm</li>
           <li>Material: High-quality plastic</li>
         </ul>
-      </div>
-
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
-        <div className="space-y-4">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow">
-              <div className="flex items-center mb-2">
-                <div className="flex text-yellow-500">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-700 ml-2">by John Doe</p>
-              </div>
-              <p className="text-gray-600">Great product, highly recommend!</p>
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className="mt-12">

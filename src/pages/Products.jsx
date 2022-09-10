@@ -1,26 +1,41 @@
 import React, { useState, useEffect } from 'react';
-// Import your local JSON file
-import productsData from '../data/product.json';
+import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 
 const Products = () => {
+  const API_URL = import.meta.env.VITE_API_URL; // Load base API URL from environment variables
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortBy, setSortBy] = useState('price');
 
   useEffect(() => {
-    // Use the local JSON data instead of fetching from an API
-    try {
-      setProducts(productsData.products); // Assuming your JSON has a "products" array
-      setLoading(false);
-    } catch (err) {
-      setError('Failed to load products');
-      setLoading(false);
-    }
+    const userToken = localStorage.getItem('token'); // Get the token from localStorage
+    console.log("user token:", userToken);
+    
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/products/`, {
+          headers: {
+            Authorization: `Token ${userToken}`,
+          },
+        });
+
+        setProducts(response.data);
+        setLoading(false);
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Unauthorized: Please provide valid authentication credentials.');
+        } else {
+          setError('Failed to load products');
+        }
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
-  // Sort products based on the selected sorting option
   const sortedProducts = [...products].sort((a, b) => {
     if (sortBy === 'price') {
       return parseFloat(a.price) - parseFloat(b.price);
@@ -32,11 +47,11 @@ const Products = () => {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="spinner">Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="text-red-500">{error}</div>;
   }
 
   return (
@@ -54,7 +69,9 @@ const Products = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {sortedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <div key={product.id}>
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
     </div>

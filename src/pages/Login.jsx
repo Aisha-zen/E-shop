@@ -1,26 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiLock, FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 
 const Login = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  // Handle login form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate form input
     if (!formData.email || !formData.password) {
       setError('Email and password are required.');
       return;
     }
 
-    setLoading(true); // Set loading state to true when the form is submitted
+    setLoading(true); 
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      // Send login request to API
+      const response = await fetch(`${API_URL}/api/login/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,49 +34,26 @@ const Login = () => {
           password: formData.password,
         }),
       });
+      console.log("Form Data:", formData);
 
       const data = await response.json();
 
-      if (response.ok) {
-        localStorage.setItem('token', data.token); // Store token in local storage
+      // Check if the login request was successful
+      if (response.ok && data.token) {
+        localStorage.setItem('token', data.token);  // Store token in localStorage
         console.log('Login successful:', data);
-        navigate('/'); // Redirect to dashboard after login
-        setError(null); // Clear any previous error messages
+        navigate('/');  // Navigate to homepage on success
+        setError(null);
       } else {
-        if (data.message === 'Invalid credentials') {
-          setError('No account found. Please check your credentials.');
-        } else {
-          setError(data.message || 'Login failed. Please try again.');
-        }
+        setError(data.message || 'Login failed. Please try again.');
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
       console.error('Login error:', error);
     } finally {
-      setLoading(false); // Reset loading state after the request is completed
+      setLoading(false);  // Stop loading spinner
     }
   };
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
-
-  const handleLogin = async (email, password) => {
-    try {
-      const response = await axios.post('/login', { email, password });
-      localStorage.setItem('token', response.data.token); // Save JWT token
-  
-      // Load and sync the cart
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const updatedCart = await syncCart(cartItems);
-      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-      setCartItems(updatedCart); // Update cart state
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  };
-  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 lg:mt-[3rem]">
@@ -110,9 +91,9 @@ const Login = () => {
           <button
             type="submit"
             className="w-full bg-gold text-white py-3 rounded-lg font-semibold hover:bg-secondary-dark transition-colors disabled:opacity-50"
-            disabled={loading} // Disable the button when loading
+            disabled={loading}
           >
-            {loading ? 'Logging in...' : 'Login'} {/* Show loading text when loading */}
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
         <p className="text-gray-600 mt-4 text-center">
