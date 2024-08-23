@@ -2,38 +2,40 @@
     "products": [
       {
         "id": 1,
-        "title": "Apple iPhone 14 Pro",
-        "price": 999.99,
-        "description": "Latest iPhone with advanced features and improved camera system.",
-        "category": "Best",
-        "image": "/iphone.png",
-        "rating": {
-          "rate": 4.9,
-          "count": 500
-        }
-      },
-      {
-        "id": 2,
-        "title": "Samsung Galaxy S23 Ultra",
-        "price": 1199.99,
-        "description": "High-end smartphone with a large display and powerful camera.",
-        "category": "Best",
-        "image": "/samsung.png",
+        "title": "Louis Vuitton Monogram Scarf",
+        "price": 299.99,
+        "description": "Luxurious scarf with the classic monogram pattern.",
+        "category": "Fashion",
+        "image": "/monogram.png",
         "rating": {
           "rate": 4.8,
-          "count": 300
+          "count": 100
         }
       },
+     
+      {
+        "id":2,
+        "title":"DANVOUY Womens T Shirt ",
+        "price":12.99,
+        "description":"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Season: Spring,Summer,Autumn,Winter.",
+        "category":"Women",
+        "image":"https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+        "rating":{
+          "rate":3.6,
+          "count":145
+          }
+        },
+  
       {
         "id": 3,
-        "title": "Sony WH-1000XM4",
-        "price": 349.99,
-        "description": "Noise-canceling headphones with superior sound quality and comfort.",
-        "category": "Electronics",
-        "image": "/sony.png",
+        "title": "Nike Air Max 270",
+        "price": 150.00,
+        "description": "Comfortable and stylish sneakers with Air Max cushioning.",
+        "category": "Men",
+        "image": "/nike.png",
         "rating": {
-          "rate": 4.9,
-          "count": 400
+          "rate": 4.8,
+          "count": 200
         }
       },
       {
@@ -75,42 +77,41 @@
       },
       {
         "id": 7,
-        "title": "Louis Vuitton Monogram Scarf",
-        "price": 299.99,
-        "description": "Luxurious scarf with the classic monogram pattern.",
-        "category": "Fashion",
-        "image": "/monogram.png",
+        "title": "Apple iPhone 14 Pro",
+        "price": 999.99,
+        "description": "Latest iPhone with advanced features and improved camera system.",
+        "category": "Best",
+        "image": "/iphone.png",
         "rating": {
-          "rate": 4.8,
-          "count": 100
+          "rate": 4.9,
+          "count": 500
         }
       },
-     
       {
-        "id":8,
-        "title":"DANVOUY Womens T Shirt ",
-        "price":12.99,
-        "description":"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Season: Spring,Summer,Autumn,Winter.",
-        "category":"Women",
-        "image":"https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-        "rating":{
-          "rate":3.6,
-          "count":145
-          }
-        },
-  
+        "id": 8,
+        "title": "Samsung Galaxy S23 Ultra",
+        "price": 1199.99,
+        "description": "High-end smartphone with a large display and powerful camera.",
+        "category": "Best",
+        "image": "/samsung.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 300
+        }
+      },
       {
         "id": 9,
-        "title": "Nike Air Max 270",
-        "price": 150.00,
-        "description": "Comfortable and stylish sneakers with Air Max cushioning.",
-        "category": "Men",
-        "image": "/nike.png",
+        "title": "Sony WH-1000XM4",
+        "price": 349.99,
+        "description": "Noise-canceling headphones with superior sound quality and comfort.",
+        "category": "Electronics",
+        "image": "/sony.png",
         "rating": {
-          "rate": 4.8,
-          "count": 200
+          "rate": 4.9,
+          "count": 400
         }
       },
+      
       {
         "id":10,
         "title":"John Hardy Dragon Station Bracelet",

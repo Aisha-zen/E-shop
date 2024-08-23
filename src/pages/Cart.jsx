@@ -40,7 +40,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 md:p-6 lg:p-8 max-w-4xl mt-20">
+    <div className="container mx-auto p-4 md:p-6 lg:p-8 max-w-4xl lg:mt-20 mt-[7rem]">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
         Shopping Cart ({getTotalItems()} {getTotalItems() === 1 ? 'item' : 'items'})
       </h1>
@@ -59,8 +59,8 @@ const Cart = () => {
 
               {/* Product Details */}
               <div className="flex-1">
-                <p className="text-lg font-semibold mb-1">{item.title}</p>
-                <p className="text-gray-600 mb-1">Price: ${item.price}</p>
+                <p className="lg:text-lg text-sm font-semibold mb-1">{item.title}</p>
+                <p className="text-gray-600 text-xs lg:text-[1rem] mb-1">Price: ${item.price}</p>
 
                 {/* Quantity Control */}
                 <div className="flex items-center">

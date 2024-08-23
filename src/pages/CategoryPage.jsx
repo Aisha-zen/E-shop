@@ -27,7 +27,7 @@ const CategoryPage = () => {
   if (error) return <div className="text-center mt-10 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="container my-[7rem] mx-auto mt-40 lg:mt-0">
+    <div className="container my-[7rem] mx-auto mt-40 lg:mt-[8rem]">
       <h2 className="lg:text-3xl text-2xl font-bold mb-4 mx-10">{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} Products</h2>
       <hr></hr>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-10 pt-10">

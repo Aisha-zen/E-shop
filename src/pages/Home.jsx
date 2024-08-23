@@ -31,7 +31,7 @@ const Home = () => {
   if (error) return <div className="text-center mt-10 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="container mt-[4rem]">
+    <div className="container mt-[5rem]">
       {/* Bottom Navigation Links */}
       <div className="hidden md:flex items-center justify-center bg-primary text-white p-5 space-x-8">
         <Link to="/" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">All</Link>
@@ -45,20 +45,6 @@ const Home = () => {
       {/* Hero Section */}
      <HomeCarousel/>
 
-      {/* Best Sellers Section */}
-      <section className="mt-12 mx-auto px-4 py-4">
-      <Link to="/category/Best">
-        <h2 className="text-4xl text-black font-semibold mb-4">Best Sellers</h2>
-        </Link>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {bestSellers.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-        {/* <div className="text-center my-10">
-          <Link to="/category/Best" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
-        </div> */}
-      </section>
 
         {/* Top Fashion Deals Section */}
         <section className="mt-5 mx-auto px-4 py-4">
@@ -72,6 +58,21 @@ const Home = () => {
         </div>
         {/* <div className="text-center mt-10">
           <Link to="/category/Top" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
+        </div> */}
+      </section>
+
+      {/* Best Sellers Section */}
+      <section className="mt-12 mx-auto px-4 py-4">
+      <Link to="/category/Best">
+        <h2 className="text-4xl text-black font-semibold mb-4">Best Sellers</h2>
+        </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {bestSellers.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+        {/* <div className="text-center my-10">
+          <Link to="/category/Best" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
         </div> */}
       </section>
 

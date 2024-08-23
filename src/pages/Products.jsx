@@ -40,7 +40,7 @@ const Products = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-6 mt-[6rem]">
       <h1 className="text-3xl font-bold mb-4">Products</h1>
       <div className="flex justify-between items-center mb-4">
         <select

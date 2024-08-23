@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'
+import '../App.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../components/context/CartContext';
 import { FaStar } from 'react-icons/fa';
@@ -44,6 +44,7 @@ const ProductDetail = () => {
 
   const handleRelatedProductClick = (relatedProductId) => {
     navigate(`/products/${relatedProductId}`);
+    window.scrollTo(0, 0); // Scroll to the top of the page
   };
 
   if (!product) {
