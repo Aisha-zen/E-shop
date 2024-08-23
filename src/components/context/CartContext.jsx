@@ -1,42 +1,37 @@
-// src/components/context/CartContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext();
 
-export const useCart = () => {
-  return useContext(CartContext);
-};
+export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [wishlistItems, setWishlistItems] = useState([]);
 
-  const addToCart = (product) => {
-    const existingProduct = cartItems.find(item => item.id === product.id);
-    if (existingProduct) {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-    }
+  const addToCart = (item) => {
+    setCartItems((prev) => [...prev, item]);
   };
 
   const removeFromCart = (index) => {
-    const newCartItems = cartItems.filter((_, i) => i !== index);
-    setCartItems(newCartItems);
+    setCartItems((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const updateQuantity = (index, newQuantity) => {
-    const updatedItems = cartItems.map((item, i) => 
-      i === index ? { ...item, quantity: newQuantity } : item
-    );
-    setCartItems(updatedItems);
+  const updateQuantity = (index, quantity) => {
+    setCartItems((prev) => {
+      const newItems = [...prev];
+      newItems[index].quantity = quantity;
+      return newItems;
+    });
+  };
+
+  const addToWishlist = (item) => {
+    setWishlistItems((prev) => [...prev, item]);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity, addToWishlist, wishlistItems }}
+    >
       {children}
     </CartContext.Provider>
   );

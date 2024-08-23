@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
-
+import productsData from '../data/product.json';
+import HomeCarousel from './HomeCarousel';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [bestSellers, setBestSellers] = useState([]);
+  const [topFashionDeals, setTopFashionDeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchFeaturedProducts = async () => {
-      try {
-        const response = await axios.get('https://fakestoreapi.com/products'); // Adjust the API endpoint and limit as needed
-        // const response = await axios.get('https://fakestoreapi.com/products?limit=12'); // Adjust the API endpoint and limit as needed
-        setFeaturedProducts(response.data);
-      } catch (err) {
-        setError('Failed to load products');
-      } finally {
+    try {
+      // Simulate loading with a timeout
+      setTimeout(() => {
+        // Use the imported data directly
+        setFeaturedProducts(productsData.products.slice(0, 25));
+        setBestSellers(productsData.products.filter(product => product.category === "Best").slice(0, 3));
+        setTopFashionDeals(productsData.products.filter(product => product.category === "Top").slice(0, 3));
         setLoading(false);
-      }
-    };
-
-    fetchFeaturedProducts();
+      }, 500); // Adjust the timeout duration as needed
+    } catch (err) {
+      setError('Failed to load products');
+      setLoading(false);
+    }
   }, []);
 
   if (loading) return <div className="text-center mt-10">Loading...</div>;
@@ -32,32 +34,63 @@ const Home = () => {
     <div className="container mt-[4rem]">
       {/* Bottom Navigation Links */}
       <div className="hidden md:flex items-center justify-center bg-primary text-white p-5 space-x-8">
-      <Link to="/" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">All</Link>
-      <Link to="/category/electronics" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Electronics</Link>
-      <Link to="/category/jewelery" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Jewelery</Link>
-      <Link to="/category/men's-clothing" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Men's Clothing</Link>
-      <Link to="/category/women's-clothing" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Women's Clothing</Link>
+        <Link to="/" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">All</Link>
+        {/* <Link to="/category/Best" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Best Seller</Link> */}
+        <Link to="/category/Electronics" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Electronics</Link>
+        <Link to="/category/Fashion" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Fashion</Link>
+        <Link to="/category/Men" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Men's Clothing</Link>
+        <Link to="/category/Women" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">Women's Clothing</Link>
       </div>
+      
       {/* Hero Section */}
-      <section className="relative bg-cover bg-no-repeat bg-center h-[60vh] text-white flex items-center justify-center"
-               style={{ backgroundImage: "url('/assets/hero-image.png')" }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Discover Amazing Deals!</h1>
-          <p className="text-lg md:text-2xl mb-6">Explore our top products and latest collections at unbeatable prices.</p>
-          <a href="/shop" className="bg-gold text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-secondary transition duration-300">Shop Now</a>
+     <HomeCarousel/>
+
+      {/* Best Sellers Section */}
+      <section className="mt-12 mx-auto px-4 py-4">
+      <Link to="/category/Best">
+        <h2 className="text-4xl text-black font-semibold mb-4">Best Sellers</h2>
+        </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {bestSellers.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
+        {/* <div className="text-center my-10">
+          <Link to="/category/Best" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
+        </div> */}
+      </section>
+
+        {/* Top Fashion Deals Section */}
+        <section className="mt-5 mx-auto px-4 py-4">
+          <Link to="/category/Top">
+        <h2 className="text-4xl text-black font-semibold mb-4">Top Fashion Deals</h2>
+        </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {topFashionDeals.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+        {/* <div className="text-center mt-10">
+          <Link to="/category/Top" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
+        </div> */}
       </section>
 
       {/* Featured Products Section */}
-      <section className="mt-12  mx-auto px-4 py-6">
-        <h2 className="text-2xl font-semibold mb-4">Featured Products</h2>
+      <section className="mt-5 mx-auto px-4 py-4">
+        <h2 className="text-4xl text-black font-semibold mb-4">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {featuredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+        <div className="text-center my-10">
+          <Link to="/products" className="text-white hover:bg-charcoal-gray transition duration-300 bg-gold py-3 px-6 rounded-lg">See More</Link>
+        </div>
       </section>
+
+      
+
+    
     </div>
   );
 };

@@ -12,6 +12,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import CategoryPage from './pages/CategoryPage';
 import Cart from './pages/Cart';
+import Wishlist from './pages/Wishlist';
 
 const App = () => {
   return (
@@ -28,8 +29,10 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/category/:category" element={<CategoryPage />} />
+            <Route path="/category/:categoryName" element={<CategoryPage />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+
 
             
           </Routes>

@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/context/CartContext';
-import { FaTrash, FaHeart } from 'react-icons/fa';
+import { useWishlist } from '../components/context/WishlistContext';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
 
   const handleRemoveFromCart = (index) => {
     removeFromCart(index);
@@ -21,6 +24,14 @@ const Cart = () => {
       updateQuantity(index, newQuantity);
     } else {
       handleRemoveFromCart(index);
+    }
+  };
+
+  const handleToggleWishlist = (item) => {
+    if (isInWishlist(item.id)) {
+      removeFromWishlist(item.id);
+    } else {
+      addToWishlist(item);
     }
   };
 
@@ -77,8 +88,11 @@ const Cart = () => {
                 >
                   <FaTrash size={20} />
                 </button>
-                <button className="text-pink-500 hover:text-pink-700">
-                  <FaHeart size={20} />
+                <button
+                  onClick={() => handleToggleWishlist(item)}
+                  className={`text-red-500 ${isInWishlist(item.id) ? 'fill-red-500' : 'hover:text-red-700'}`}
+                >
+                  {isInWishlist(item.id) ? <FaHeart size={20} /> : <FaRegHeart size={20} />}
                 </button>
               </div>
             </div>

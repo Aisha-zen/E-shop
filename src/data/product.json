@@ -1,0 +1,744 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Apple iPhone 14 Pro",
+        "price": 999.99,
+        "description": "Latest iPhone with advanced features and improved camera system.",
+        "category": "Best",
+        "image": "/iphone.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 500
+        }
+      },
+      {
+        "id": 2,
+        "title": "Samsung Galaxy S23 Ultra",
+        "price": 1199.99,
+        "description": "High-end smartphone with a large display and powerful camera.",
+        "category": "Best",
+        "image": "/samsung.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 300
+        }
+      },
+      {
+        "id": 3,
+        "title": "Sony WH-1000XM4",
+        "price": 349.99,
+        "description": "Noise-canceling headphones with superior sound quality and comfort.",
+        "category": "Electronics",
+        "image": "/sony.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 400
+        }
+      },
+      {
+        "id": 4,
+        "title": "Dell XPS 13",
+        "price": 1299.99,
+        "description": "Premium laptop with a sleek design and high-performance specs.",
+        "category": "Best",
+        "image": "/dell.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 350
+        }
+      },
+  
+      {
+        "id": 5,
+        "title": "Chanel Classic Flap Bag",
+        "price": 5999.99,
+        "description": "Iconic luxury handbag with a timeless design.",
+        "category": "Fashion",
+        "image": "/flap.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 120
+        }
+      },
+      {
+        "id": 6,
+        "title": "Gucci GG Marmont Belt",
+        "price": 450.00,
+        "description": "Elegant belt with the iconic GG logo.",
+        "category": "Fashion",
+        "image": "/belt.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 150
+        }
+      },
+      {
+        "id": 7,
+        "title": "Louis Vuitton Monogram Scarf",
+        "price": 299.99,
+        "description": "Luxurious scarf with the classic monogram pattern.",
+        "category": "Fashion",
+        "image": "/monogram.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 100
+        }
+      },
+     
+      {
+        "id":8,
+        "title":"DANVOUY Womens T Shirt ",
+        "price":12.99,
+        "description":"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Season: Spring,Summer,Autumn,Winter.",
+        "category":"Women",
+        "image":"https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+        "rating":{
+          "rate":3.6,
+          "count":145
+          }
+        },
+  
+      {
+        "id": 9,
+        "title": "Nike Air Max 270",
+        "price": 150.00,
+        "description": "Comfortable and stylish sneakers with Air Max cushioning.",
+        "category": "Men",
+        "image": "/nike.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 200
+        }
+      },
+      {
+        "id":10,
+        "title":"John Hardy Dragon Station Bracelet",
+        "price":695,
+        "description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+        "category":"Fashion",
+        "image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+        "rating":{
+          "rate":4.6,
+          "count":400
+        }
+      },
+      {
+        "id": 11,
+        "title": "Levi's 501 Original Fit Jeans",
+        "price": 89.99,
+        "description": "Classic fit jeans with a timeless design and durable fabric.",
+        "category": "Men",
+        "image": "/jeans.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 180
+        }
+      },
+      {
+        "id": 12,
+        "title": "Ralph Lauren Polo Shirt",
+        "price": 79.99,
+        "description": "Classic polo shirt with a signature logo and premium cotton fabric.",
+        "category": "Men",
+        "image": "/lauren.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 160
+        }
+      },
+  
+      {
+        "id": 13,
+        "title": "Gucci GG Marmont Mini Bag",
+        "price": 999.00,
+        "description": "Elegant mini bag with the GG Marmont logo.",
+        "category": "Best",
+        "image": "/marmont.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 130
+        }
+      },
+      {
+        "id": 14,
+        "title": "Chloe Drew Shoulder Bag",
+        "price": 1499.99,
+        "description": "Chic shoulder bag with a unique chain design.",
+        "category": "Women",
+        "image": "/chloe.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 110
+        }
+      },
+      {
+        "id": 15,
+        "title": "Burberry Check Wool Scarf",
+        "price": 449.99,
+        "description": "Cozy wool scarf with the classic Burberry check pattern.",
+        "category": "Women",
+        "image": "/burberry.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 140
+        }
+      },
+      {
+        "id": 16,
+        "title": "Saint Laurent Leather Jacket",
+        "price": 2199.99,
+        "description": "Stylish leather jacket with a modern fit.",
+        "category": "Women",
+        "image": "/saint.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 100
+        }
+      },
+  
+      {
+        "id": 17,
+        "title": "Tiffany & Co. Heart Pendant",
+        "price": 799.00,
+        "description": "Elegant heart-shaped pendant necklace from Tiffany & Co.",
+        "category": "Jewelry",
+        "image": "/tiffany.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 90
+        }
+      },
+      {
+        "id": 18,
+        "title": "Cartier Love Bracelet",
+        "price": 4500.00,
+        "description": "Iconic bracelet from Cartier with a timeless design.",
+        "category": "Jewelry",
+        "image": "/cartier.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 70
+        }
+      },
+      {
+        "id": 19,
+        "title": "Rolex Submariner",
+        "price": 8499.99,
+        "description": "Luxury watch with a classic design and high precision.",
+        "category": "Jewelry",
+        "image": "/rolex.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 80
+        }
+      },
+      {
+        "id": 20,
+        "title": "Pandora Birthstone Ring",
+        "price": 129.99,
+        "description": "Beautiful ring with a customizable birthstone.",
+        "category": "Jewelry",
+        "image": "/pandora.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 100
+        }
+      },
+  
+      {
+        "id": 21,
+        "title": "Sony A7 III Camera",
+        "price": 2299.99,
+        "description": "Full-frame mirrorless camera with advanced features.",
+        "category": "Electronics",
+        "image": "/sony-a7.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 150
+        }
+      },
+      {
+        "id": 22,
+        "title": "Apple MacBook Pro 16",
+        "price": 2399.99,
+        "description": "High-performance laptop with a 16-inch Retina display.",
+        "category": "Electronics",
+        "image": "/apple.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 180
+        }
+      },
+      {
+        "id": 23,
+        "title": "Bose SoundLink Revolve+",
+        "price": 299.99,
+        "description": "Portable Bluetooth speaker with 360-degree sound.",
+        "category": "Electronics",
+        "image": "/revolver.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+      {
+        "id": 24,
+        "title": "Samsung QLED 65\" TV",
+        "price": 1499.99,
+        "description": "High-definition 65-inch QLED TV with vibrant colors.",
+        "category": "Electronics",
+        "image": "/qled.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 110
+        }
+      },
+  
+      {
+        "id": 25,
+        "title": "Michael Kors Jet Set Tote",
+        "price": 399.00,
+        "description": "Stylish tote bag with a spacious interior.",
+        "category": "Top",
+        "image": "/michael.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 140
+        }
+      },
+      {
+        "id": 26,
+        "title": "Ralph Lauren Varsity Jacket",
+        "price": 85.00,
+        "description": "Classic varsity jacket with Ralph Lauren's signature logo.",
+        "category": "Men",
+        "image": "/varsity.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 160
+        }
+      },
+      {
+        "id": 27,
+        "title": "Balenciaga Triple S Sneakers",
+        "price": 995.00,
+        "description": "Trendy sneakers with a chunky design.",
+        "category": "Top",
+        "image": "/triple.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 130
+        }
+      },
+      {
+        "id": 28,
+        "title": "Fendi Peekaboo Bag",
+        "price": 3500.00,
+        "description": "Luxury handbag with a distinctive design.",
+        "category": "Top",
+        "image": "/fendi.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 100
+        }
+      },
+  
+      {
+        "id": 29,
+        "title": "Nike Dri-FIT Training Shorts",
+        "price": 45.00,
+        "description": "Breathable training shorts with Dri-FIT technology for moisture-wicking.",
+        "category": "Men",
+        "image": "/short.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 200
+        }
+      },
+      {
+        "id": 30,
+        "title": "Under Armour Tech 2.0 T-Shirt",
+        "price": 35.00,
+        "description": "Lightweight and comfortable t-shirt with UA Tech fabric.",
+        "category": "Men",
+        "image": "/armour.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 170
+        }
+      },
+      {
+        "id":31,
+        "title":"Samsung 49-Inch Curved Monitor ",
+        "price":999.99,
+        "description":"49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+        "category":"Electronics",
+        "image":"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+        "rating":{
+          "rate":2.2,
+          "count":140
+          }
+        },
+      
+      {
+        "id": 32,
+        "title": "Hugo Boss Dress Shirt",
+        "price": 120.00,
+        "description": "Elegant dress shirt with a slim fit and high-quality cotton.",
+        "category": "Men",
+        "image": "/hugo.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 160
+        }
+      },
+  
+      {
+        "id": 33,
+        "title": "Gucci GG Marmont Shoulder Bag",
+        "price": 1099.00,
+        "description": "Iconic shoulder bag with the GG Marmont logo.",
+        "category": "Women",
+        "image": "/shoulder.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 110
+        }
+      },
+      {
+        "id": 34,
+        "title": "Chanel Boy Bag",
+        "price": 4599.00,
+        "description": "Luxurious handbag with a distinctive design.",
+        "category": "Women",
+        "image": "/chanel.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 90
+        }
+      },
+      {
+        "id": 35,
+        "title": "Dior Saddle Bag",
+        "price": 1999.00,
+        "description": "Fashionable saddle-shaped bag with a unique design.",
+        "category": "Women",
+        "image": "/dior.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 100
+        }
+      },
+      {
+        "id": 36,
+        "title": "Valentino Rockstud Pumps",
+        "price": 850.00,
+        "description": "Elegant pumps with distinctive Rockstud detailing.",
+        "category": "Women",
+        "image": "/valentino.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+  
+      {
+        "id": 37,
+        "title": "Bvlgari Serpenti Necklace",
+        "price": 1399.00,
+        "description": "Stunning necklace with a serpent-inspired design.",
+        "category": "Jewelry",
+        "image": "/bvlgari.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 80
+        }
+      },
+      {
+        "id": 38,
+        "title": "Harry Winston Diamond Earrings",
+        "price": 2500.00,
+        "description": "Exquisite diamond earrings from Harry Winston.",
+        "category": "Jewelry",
+        "image": "/harry.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 70
+        }
+      },
+      {
+        "id": 39,
+        "title": "Tiffany & Co. Atlas Ring",
+        "price": 649.00,
+        "description": "Modern ring with a unique Atlas design.",
+        "category": "Jewelry",
+        "image": "/atlas.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 90
+        }
+      },
+      {
+        "id": 40,
+        "title": "Van Cleef & Arpels Bracelet",
+        "price": 2999.00,
+        "description": "Luxurious bracelet with the iconic Alhambra motif.",
+        "category": "Jewelry",
+        "image": "/cleef.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 60
+        }
+      },
+  
+      {
+        "id": 41,
+        "title": "Prada Saffiano Leather Tote",
+        "price": 2499.00,
+        "description": "Elegant leather tote with Prada's signature Saffiano leather.",
+        "category": "Fashion",
+        "image": "/tote.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 130
+        }
+      },
+      {
+        "id": 42,
+        "title": "Louis Vuitton Monogram Scarf",
+        "price": 550.00,
+        "description": "Luxurious scarf with Louis Vuitton's classic monogram pattern.",
+        "category": "Fashion",
+        "image": "/louis.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 120
+        }
+      },
+      {
+        "id": 43,
+        "title": "Burberry Trench Coat",
+        "price": 1599.00,
+        "description": "Classic trench coat with a timeless design.",
+        "category": "Fashion",
+        "image": "/trench.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 140
+        }
+      },
+      {
+        "id": 44,
+        "title": "Hermès Birkin Bag",
+        "price": 12000.00,
+        "description": "Iconic luxury handbag with a timeless design.",
+        "category": "Fashion",
+        "image": "/hermes.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 80
+        }
+      },
+  
+      {
+        "id": 45,
+        "title": "AirPods Pro",
+        "price": 249.99,
+        "description": "High-quality noise-cancelling wireless earbuds.",
+        "category": "Best",
+        "image": "/airpods.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 200
+        }
+      },
+      {
+        "id": 46,
+        "title": "Instant Pot Duo 7-in-1",
+        "price": 89.99,
+        "description": "Versatile multi-cooker with 7 cooking functions.",
+        "category": "Best",
+        "image": "/pot.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 150
+        }
+      },
+      {
+        "id": 47,
+        "title": "Fitbit Charge 5",
+        "price": 149.99,
+        "description": "Advanced fitness tracker with built-in GPS.",
+        "category": "Best",
+        "image": "/fitbit.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 160
+        }
+      },
+      {
+        "id": 48,
+        "title": "Prada Saffiano Leather Wallet",
+        "price": 399.99,
+        "description": "Stylish wallet made from durable saffiano leather.",
+        "category": "Fashion",
+        "image": "/saffiano.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 140
+        }
+      },
+     
+  
+      {
+        "id": 49,
+        "title": "Saint Laurent Sunset Bag",
+        "price": 1790.00,
+        "description": "Elegant bag with a sophisticated design.",
+        "category": "Top",
+        "image": "/sunset.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 110
+        }
+      },
+      {
+        "id": 50,
+        "title": "Tory Burch Miller Sandals",
+        "price": 198.00,
+        "description": "Comfortable sandals with Tory Burch's signature logo.",
+        "category": "Top",
+        "image": "/tory.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 140
+        }
+      },
+      {
+        "id": 51,
+        "title": "Patagonia Better Sweater Jacket",
+        "price": 139.00,
+        "description": "Warm and stylish jacket made from recycled fleece.",
+        "category": "Men",
+        "image": "/sweater.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 140
+        }
+      },
+      
+      {
+        "id": 52,
+        "title": "Chloe Drew Bag",
+        "price": 1390.00,
+        "description": "Chic handbag with a gold-tone chain.",
+        "category": "Top",
+        "image": "/drew.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 100
+        }
+      },
+  
+      {
+        "id": 53,
+        "title": "Dolce & Gabbana Sunglasses",
+        "price": 340.00,
+        "description": "Stylish sunglasses with a classic design.",
+        "category": "Fashion",
+        "image": "/sunglasses.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 130
+        }
+      },
+      {
+        "id": 54,
+        "title": "Gucci Belt",
+        "price": 450.00,
+        "description": "Luxury belt with Gucci's iconic GG buckle.",
+        "category": "Fashion",
+        "image": "/gucci-belt.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+      {
+        "id":55,
+        "title":"Rain Jacket Women",
+        "price":39.99,
+        "description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design.",
+        "category":"Women",
+        "image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+        "rating":{
+          "rate":3.8,
+          "count":679
+      }
+    },
+      
+      {
+        "id": 56,
+        "title": "Givenchy Nightingale Bag",
+        "price": 2600.00,
+        "description": "Elegant handbag with a spacious interior.",
+        "category": "Fashion",
+        "image": "/givenchy.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 100
+        }
+      },
+      {
+        "id": 57,
+        "title": "Ninja Foodi 9-in-1",
+        "price": 199.99,
+        "description": "Multi-functional pressure cooker and air fryer.",
+        "category": "Best",
+        "image": "/ninja.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 130
+        }
+      },
+     
+      {
+        "id": 58,
+        "title": "Givenchy Antigona Bag",
+        "price": 2190.00,
+        "description": "Elegant handbag with a structured design.",
+        "category": "Top",
+        "image": "/antigona.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 90
+        }
+      },
+    
+      {
+        "id": 59,
+        "title": "Alexander McQueen Sneakers",
+        "price": 595.00,
+        "description": "Fashionable sneakers with a bold design.",
+        "category": "Top",
+        "image": "/alexander.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 120
+        }
+      },
+      {
+        "id":60,
+        "title":"BIYLAC Women's Winter Coats",
+        "price":56.99,
+        "description":" Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. It is suitable for different season and help you adapt to different climates","category":"Women",
+        "image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+        "rating":{
+          "rate":2.6,
+          "count":235
+        }
+      }
+    ]
+  }
+  

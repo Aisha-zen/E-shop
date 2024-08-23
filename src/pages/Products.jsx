@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// Import your local JSON file
+import productsData from '../data/product.json';
 import ProductCard from '../components/ProductCard';
 
 const Products = () => {
@@ -8,20 +9,15 @@ const Products = () => {
   const [error, setError] = useState(null);
   const [sortBy, setSortBy] = useState('price');
 
-  // Fetch products from the public API
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        setProducts(response.data);
-      } catch (err) {
-        setError('Failed to load products');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
+    // Use the local JSON data instead of fetching from an API
+    try {
+      setProducts(productsData.products); // Assuming your JSON has a "products" array
+      setLoading(false);
+    } catch (err) {
+      setError('Failed to load products');
+      setLoading(false);
+    }
   }, []);
 
   // Sort products based on the selected sorting option

@@ -12,6 +12,8 @@ import {
   FaDollarSign,
   FaLanguage,
   FaQuestionCircle,
+  FaHeart,
+  FaHeartBroken,
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -19,6 +21,7 @@ const Navbar = () => {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const [isWishlistAdded, setIsWishlistAdded] = useState(false);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,13 +39,24 @@ const Navbar = () => {
     setIsCategoriesOpen(!isCategoriesOpen);
   };
 
+  const handleWishlistToggle = () => {
+    setIsWishlistAdded(!isWishlistAdded);
+  };
+
+  const closeAllOptions = () => {
+    setIsAccountOpen(false);
+    setIsCountryOpen(false);
+    setIsCategoriesOpen(false);
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav className="bg-primary text-white fixed top-0 left-0 w-full z-20 ">
+    <nav className="bg-primary text-white fixed top-0 left-0 w-full z-20">
       <div className="container mx-auto flex flex-col md:flex-row md:items-center justify-between p-4">
         {/* Top Section - Desktop View */}
         <div className="flex items-center justify-between w-full md:w-auto">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold">
+          <Link to="/" className="text-2xl font-bold" onClick={closeAllOptions}>
             E-Shop
           </Link>
 
@@ -74,14 +88,14 @@ const Navbar = () => {
             </button>
             {isAccountOpen && (
               <div className="absolute right-0 mt-2 bg-white text-black rounded shadow-lg w-48">
-                <Link to="/login" className="block p-2 hover:bg-gray-100 text-center">
+                <Link to="/login" className="block p-2 hover:bg-gray-100 text-center" onClick={closeAllOptions}>
                   <button className="bg-primary text-white w-full py-2 rounded">Sign In</button>
                 </Link>
-                <Link to="/signup" className="block p-2 hover:bg-gray-100">Register</Link>
-                <Link to="/my-orders" className="block p-2 hover:bg-gray-100">My Orders</Link>
-                <Link to="/payment" className="block p-2 hover:bg-gray-100">Payment</Link>
-                <Link to="/wishlist" className="block p-2 hover:bg-gray-100">Wishlist</Link>
-                <Link to="/settings" className="block p-2 hover:bg-gray-100">Settings</Link>
+                <Link to="/signup" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Register</Link>
+                <Link to="/my-orders" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>My Orders</Link>
+                <Link to="/payment" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Payment</Link>
+                <Link to="/wishlist" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Wishlist</Link>
+                <Link to="/settings" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Settings</Link>
               </div>
             )}
           </div>
@@ -125,8 +139,10 @@ const Navbar = () => {
             )}
           </div>
 
+         
+
           {/* Cart */}
-          <Link to="/cart" className="hover:bg-secondary p-2 rounded">
+          <Link to="/cart" className="hover:bg-secondary p-2 rounded" onClick={closeAllOptions}>
             <FaShoppingCart />
           </Link>
         </div>
@@ -148,12 +164,11 @@ const Navbar = () => {
                 </button>
                 {isCategoriesOpen && (
                   <div className="mt-2 bg-white text-black rounded shadow-lg w-full">
-                    <Link to="/" className="block p-2 hover:bg-gray-100">All</Link>
-                    <Link to="/category/electronics" className="block p-2 hover:bg-gray-100">Electronics</Link>
-                    <Link to="/category/jewelery" className="block p-2 hover:bg-gray-100">Jewelery</Link>
-                    <Link to="/category/men's-clothing" className="block p-2 hover:bg-gray-100">Men's Clothing</Link>
-                    <Link to="/category/women's-clothing" className="block p-2 hover:bg-gray-100">Women's Clothing</Link>
-                   
+                    <Link to="/" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>All</Link>
+                    <Link to="/category/electronics" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Electronics</Link>
+                    <Link to="/category/jewelery" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Jewelery</Link>
+                    <Link to="/category/men" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Men's Clothing</Link>
+                    <Link to="/category/women" className="block p-2 hover:bg-gray-100" onClick={closeAllOptions}>Women's Clothing</Link>
                   </div>
                 )}
               </div>
@@ -174,28 +189,15 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center p-2 hover:bg-secondary rounded">
                   <FaQuestionCircle className="mr-2" />
-                  <span>Help Center</span>
+                  <span>Help</span>
                 </div>
               </div>
             </div>
           </div>
         )}
       </div>
-
-      
-              {/* Search Input - Mobile */}
-        <div className="relative w-full flex md:hidden p-4 mx-auto">
-        <input
-          type="text"
-          placeholder="Search for products..."
-          className="p-2 pl-3 border rounded-full w-full text-black"
-        />
-        <FaSearch className="absolute right-7 top-1/2 transform -translate-y-1/2 text-gray-500" />
-        </div>
     </nav>
   );
 };
 
 export default Navbar;
-
- 
