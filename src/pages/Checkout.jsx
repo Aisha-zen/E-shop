@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import { useCart } from '../components/context/CartContext'; // Ensure you have access to cartItems here
+import React, { useState, useEffect } from 'react';
+import { useCart } from '../components/context/CartContext';
+import { useCheckout } from '../components/context/CheckoutContext';
+import { Link } from 'react-router-dom';
+
 
 const Checkout = () => {
-  const { cartItems } = useCart();
   const [formData, setFormData] = useState({
     name: '',
     address: '',
     paymentMethod: 'credit-card',
   });
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,9 +22,18 @@ const Checkout = () => {
     console.log('Submitting checkout with data:', formData);
   };
 
+  const { setTotalAmount } = useCheckout(); // Get the setter from the context
+  const { cartItems } = useCart();
+
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+    setTotalAmount(total); // Set the total amount in the context
+    return total;
   };
+
+  useEffect(() => {
+    calculateTotal();
+  }, [cartItems]);
 
   return (
     <div className="container mx-auto px-4 py-6 lg:mt-20 mt-[7rem]">
@@ -84,12 +100,9 @@ const Checkout = () => {
               </select>
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-gold text-white px-4 py-3 rounded-lg hover:bg-secondary-dark transition-colors"
-            >
-              Complete Purchase
-            </button>
+            <button className="bg-[#D4AF37] text-white px-4 py-2 mt-4 rounded">
+            <Link to="/paymentdetails">Proceed to Payment</Link>
+          </button>
           </form>
         </div>
       </div>

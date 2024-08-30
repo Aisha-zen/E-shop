@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/context/CartContext';
-import { useWishlist } from '../components/context/WishlistContext';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 
 const Cart = () => {
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const { cartItems, removeFromCart, updateQuantity, addToWishlist, removeFromWishlist, isInWishlist } = useCart();
 
   const handleRemoveFromCart = (index) => {
     removeFromCart(index);
@@ -38,6 +36,11 @@ const Cart = () => {
   const getTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container mx-auto p-4 md:p-6 lg:p-8 max-w-4xl lg:mt-20 mt-[7rem]">

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useWishlist } from '../components/context/WishlistContext';
 
 const Wishlist = () => {
   const { wishlist } = useWishlist();
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container mx-auto p-4 md:p-6 lg:p-8 max-w-4xl mt-20">
