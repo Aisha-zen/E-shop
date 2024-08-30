@@ -31,7 +31,7 @@ const Home = () => {
   if (error) return <div className="text-center mt-10 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="container mt-[5rem]">
+    <div className=" mt-[5rem]">
       {/* Bottom Navigation Links */}
       <div className="hidden md:flex items-center justify-center bg-primary text-white p-5 space-x-8">
         <Link to="/" className="text-gold hover:text-emerald-green px-2 py-1 rounded-xl">All</Link>
