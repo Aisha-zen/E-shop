@@ -6,7 +6,7 @@ const ProtectedRoute = ({ element: Component }) => {
     return !!localStorage.getItem('token'); // Check if token exists in local storage
   };
 
-  return isAuthenticated() ? Component : <Navigate to="/login" />;
+  return isAuthenticated() ? Component : <Navigate to="/signup" />;
 };
 
 export default ProtectedRoute;
