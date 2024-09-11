@@ -6,6 +6,7 @@ import { FaStar } from 'react-icons/fa';
 import axios from 'axios';
 
 const ProductDetail = ({ userToken }) => {
+  const API_URL = import.meta.env.VITE_API_URL; // Load base API URL from environment variables
   const { id } = useParams(); // Getting product ID from the route
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -22,26 +23,27 @@ const ProductDetail = ({ userToken }) => {
       try {
         setLoading(true);
         // Fetching the product detail by ID
-        const response = await axios.get(
-          `https://e-shop-ochre-pi.vercel.app/api/product/${id}/`,
+        const response = await axios.get(`${API_URL}/api/product/${id}/`,
           {
             headers: {
-              Authorization: `Bearer ${userToken}`, // Include user token for authenticated requests
+              'Content-Type': 'application/json',
             },
           }
         );
+        console.log('Product Data:', response.data); // Logging product data
         const productData = response.data;
         setProduct(productData);
 
         // Fetch related products based on category (assuming API provides this info)
-        const relatedResponse = await axios.get(
-          `https://e-shop-ochre-pi.vercel.app/api/products/`
-        );
-        const allProducts = relatedResponse.data.products;
-        const related = allProducts.filter(
-          (item) => item.category === productData.category && item.id !== productData.id
-        );
-        setRelatedProducts(related);
+      // Fetch related products based on product category from backend if possible
+
+// const relatedResponse = await axios.get(`${API_URL}/api/product/related/${productData.category}`);
+
+//         const allProducts = relatedResponse.data.products;
+//         const related = allProducts.filter(
+//           (item) => item.category === productData.category && item.id !== productData.id
+//         );
+//         setRelatedProducts(related);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -85,26 +87,26 @@ const ProductDetail = ({ userToken }) => {
         <div className="flex-1">
           <div className="w-full h-96 overflow-hidden rounded-lg shadow-lg">
             <img
-              src={product.image}
-              alt={product.title}
+              src={product?.image} // Fallback to default image if not available
+              alt={product?.title}
               className="w-full h-full object-contain transition-transform duration-300 transform hover:scale-105"
             />
           </div>
         </div>
         <div className="flex-1 mt-6 md:mt-0">
-          <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-          <p className="text-xl font-semibold text-gray-800 mb-4">${product.price}</p>
+          <h1 className="text-3xl font-bold mb-4">{product?.title}</h1>
+          <p className="text-xl font-semibold text-gray-800 mb-4">${product?.price}</p>
 
           <div className="flex items-center mb-6">
             <div className="flex text-yellow-500">
-              {Array.from({ length: Math.round(product.rating.rate) }, (_, i) => (
+              {Array.from({ length: Math.round(product?.rating?.rate) }, (_, i) => (
                 <FaStar key={i} />
               ))}
             </div>
-            <p className="text-gray-600 ml-2">({product.rating.count} reviews)</p>
+            <p className="text-gray-600 ml-2">({product?.rating?.count} reviews)</p>
           </div>
 
-          <p className="text-lg text-gray-700 mb-6">{product.description}</p>
+          <p className="text-lg text-gray-700 mb-6">{product?.description }</p>
 
           <div className="flex items-center mb-6">
             <label htmlFor="quantity" className="mr-4 text-lg font-semibold">
@@ -145,7 +147,7 @@ const ProductDetail = ({ userToken }) => {
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4">Product Details</h2>
         <ul className="list-disc list-inside text-lg text-gray-700">
-          <li>Category: {product.category}</li>
+          <li>Category: {product?.category || 'N/A'}</li>
           <li>Weight: 500g</li>
           <li>Dimensions: 10x20x30 cm</li>
           <li>Material: High-quality plastic</li>
@@ -163,13 +165,13 @@ const ProductDetail = ({ userToken }) => {
             >
               <div className="w-full h-64 overflow-hidden rounded-lg mb-4">
                 <img
-                  src={relatedProduct.image}
-                  alt={relatedProduct.title}
+                  src={relatedProduct.image || 'default-image-url'}
+                  alt={relatedProduct.title || 'Product Image'}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-lg font-bold">{relatedProduct.title}</h3>
-              <p className="text-gray-800 font-semibold">${relatedProduct.price}</p>
+              <h3 className="text-lg font-bold">{relatedProduct.title || 'No Title'}</h3>
+              <p className="text-gray-800 font-semibold">${relatedProduct.price || 'N/A'}</p>
             </div>
           ))}
         </div>

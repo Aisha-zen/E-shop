@@ -739,7 +739,526 @@
           "rate":2.6,
           "count":235
         }
+      },
+    
+      {
+        "id": 61,
+        "title": "Gucci Leather Handbag",
+        "price": 1299.99,
+        "description": "Elegant leather handbag with signature Gucci design.",
+        "category": "Fashion",
+        "image": "/gucci_handbag.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 120
+        }
+      },
+      {
+        "id": 62,
+        "title": "Samsung Galaxy S21 Phone Case",
+        "price": 29.99,
+        "description": "Slim and stylish case with shock absorption.",
+        "category": "Phone Accessories",
+        "image": "/s21_case.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 80
+        }
+      },
+      {
+        "id": 63,
+        "title": "Nike Air Max 270",
+        "price": 199.99,
+        "description": "Stylish and comfortable sneakers for everyday wear.",
+        "category": "Fashion",
+        "image": "/nike_airmax270.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 80
+        }
+      },
+      {
+        "id": 64,
+        "title": "Floral Summer Maxi Dress",
+        "price": 59.99,
+        "description": "Lightweight, flowy summer gown perfect for any occasion.",
+        "category": "Fashion",
+        "image": "/floral_maxi_dress.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 150
+        }
+      },
+      {
+        "id": 66,
+        "title": "Ray-Ban Aviator Sunglasses",
+        "price": 159.99,
+        "description": "Classic aviator sunglasses with UV protection.",
+        "category": "Fashion",
+        "image": "/rayban_aviator.png",
+        "rating": {
+          "rate": 4.5,
+          "count": 60
+        }
+      },
+      {
+        "id": 66,
+        "title": "Rose Gold Hoop Earrings",
+        "price": 29.99,
+        "description": "Elegant rose gold hoop earrings for casual or formal wear.",
+        "category": "Fashion",
+        "image": "/rosegold_earrings.png",
+        "rating": {
+          "rate": 4.5,
+          "count": 95
+        }
+      },
+      {
+        "id": 67,
+        "title": "Pastel Phone Grip and Stand",
+        "price": 12.99,
+        "description": "Cute pastel-colored phone grip for better handling.",
+        "category": "Phone Accessories",
+        "image": "/pastel_phone_grip.png",
+        "rating": {
+          "rate": 4.4,
+          "count": 120
+        }
+      },
+      {
+        "id": 68,
+        "title": "Chanel No. 5 Perfume",
+        "price": 299.99,
+        "description": "Iconic fragrance with timeless elegance.",
+        "category": "Beauty",
+        "image": "/chanel_perfume.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 90
+        }
+      },
+      {
+        "id": 69,
+        "title": "DIY Jewelry Making Kit",
+        "price": 25.99,
+        "description": "Create custom necklaces, bracelets, and more with this kit.",
+        "category": "DIY",
+        "image": "/jewelry_kit.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 85
+        }
+      },
+      {
+        "id": 70,
+        "title": "Polka Dot Midi Dress",
+        "price": 79.99,
+        "description": "Adorable polka dot midi dress, perfect for casual outings.",
+        "category": "Fashion",
+        "image": "/polka_dot_dress.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 65
+        }
+      },
+      {
+        "id": 71,
+        "title": "Vintage Leather Backpack",
+        "price": 89.99,
+        "description": "Cute and functional vintage-style leather backpack.",
+        "category": "Fashion",
+        "image": "/vintage_backpack.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 78
+        }
+      },
+      {
+        "id": 72,
+        "title": "DIY Terrarium Kit",
+        "price": 45.99,
+        "description": "Create your own indoor garden with this easy-to-use kit.",
+        "category": "DIY",
+        "image": "/terrarium_kit.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 95
+        }
+      },
+      {
+        "id": 73,
+        "title": "Beaded Statement Necklace",
+        "price": 24.99,
+        "description": "Bold and colorful beaded necklace to elevate your look.",
+        "category": "Fashion",
+        "image": "/beaded_necklace.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 80
+        }
+      },
+      {
+        "id": 74,
+        "title": "Lace Bridal Gown",
+        "price": 499.99,
+        "description": "Beautiful lace gown for the perfect bridal look.",
+        "category": "Fashion",
+        "image": "/lace_bridal_gown.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 45
+        }
+      },
+      {
+        "id": 75,
+        "title": "Bamboo Phone Charging Dock",
+        "price": 39.99,
+        "description": "Sleek and eco-friendly bamboo charging dock for your devices.",
+        "category": "Phone Accessories",
+        "image": "/bamboo_dock.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 60
+        }
+      },
+      {
+        "id": 76,
+        "title": "Rose Floral Bodycon Dress",
+        "price": 69.99,
+        "description": "Gorgeous bodycon dress with a rose floral print.",
+        "category": "Fashion",
+        "image": "/floral_bodycon.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 130
+        }
+      },
+      {
+        "id": 77,
+        "title": "Boho Chic Beach Cover-Up",
+        "price": 49.99,
+        "description": "Perfect boho-style beach cover-up for summer.",
+        "category": "Fashion",
+        "image": "/boho_coverup.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 75
+        }
+      },
+      {
+        "id": 78,
+        "title": "Crystal Pendant Necklace",
+        "price": 39.99,
+        "description": "Dainty crystal pendant necklace for a chic look.",
+        "category": "Fashion",
+        "image": "/crystal_pendant.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 40
+        }
+      },
+      {
+        "id": 79,
+        "title": "Crochet Top DIY Kit",
+        "price": 35.99,
+        "description": "DIY kit for creating a stylish crochet top.",
+        "category": "DIY",
+        "image": "/crochet_kit.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 75
+        }
+      },
+      {
+        "id": 80,
+        "title": "Bohemian Off-Shoulder Maxi Dress",
+        "price": 84.99,
+        "description": "Free-spirited bohemian-style off-shoulder maxi dress.",
+        "category": "Fashion",
+        "image": "/boho_maxi_dress.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 90
+        }
+      },
+      {
+        "id": 81,
+        "title": "Marble Phone Case",
+        "price": 21.99,
+        "description": "Stylish marble design case for iPhone and Android phones.",
+        "category": "Phone Accessories",
+        "image": "/marble_phone_case.png",
+        "rating": {
+          "rate": 4.5,
+          "count": 50
+        }
+      },
+      {
+        "id": 82,
+        "title": "Velvet Scrunchies (Pack of 5)",
+        "price": 15.99,
+        "description": "Soft and trendy velvet scrunchies for all hair types.",
+        "category": "Fashion",
+        "image": "/velvet_scrunchies.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 110
+        }
+      },
+      {
+        "id": 83,
+        "title": "Personalized DIY Photo Album",
+        "price": 29.99,
+        "description": "Create your own personalized photo album with this kit.",
+        "category": "DIY",
+        "image": "/diy_photo_album.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 85
+        }
+      },
+      {
+        "id": 84,
+        "title": "Elegant Women's Blazer",
+        "price": 79.99,
+        "description": "Tailored women's blazer for a chic and professional look.",
+        "category": "Women",
+        "image": "/womens_blazer.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 85
+        }
+      },
+      {
+        "id": 85,
+        "title": "Aviator Sunglasses",
+        "price": 45.99,
+        "description": "Classic aviator sunglasses with UV protection.",
+        "category": "Fashion",
+        "image": "/aviator_sunglasses.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+      {
+        "id": 86,
+        "title": "Men's Casual Denim Jacket",
+        "price": 99.99,
+        "description": "Stylish denim jacket for a casual yet polished look.",
+        "category": "Men",
+        "image": "/mens_denim_jacket.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 60
+        }
+      },
+      {
+        "id": 87,
+        "title": "Gold Hoop Earrings",
+        "price": 24.99,
+        "description": "Timeless gold hoop earrings for everyday elegance.",
+        "category": "Fashion",
+        "image": "/gold_hoop_earrings.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 75
+        }
+      },
+      {
+        "id": 88,
+        "title": "Boys' Graphic T-Shirt",
+        "price": 19.99,
+        "description": "Fun and colorful graphic t-shirt for boys.",
+        "category": "Kids",
+        "image": "/boys_graphic_tshirt.png",
+        "rating": {
+          "rate": 4.5,
+          "count": 90
+        }
+      },
+      {
+        "id": 89,
+        "title": "Women's Floral Sundress",
+        "price": 59.99,
+        "description": "Beautiful floral sundress, perfect for summer outings.",
+        "category": "Women",
+        "image": "/womens_sundress.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 105
+        }
+      },
+      {
+        "id": 90,
+        "title": "Men's Slim Fit Chinos",
+        "price": 49.99,
+        "description": "Stylish and comfortable slim fit chinos for men.",
+        "category": "Men",
+        "image": "/mens_chinos.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 65
+        }
+      },
+      {
+        "id": 91,
+        "title": "Women's Leather Crossbody Bag",
+        "price": 149.99,
+        "description": "Elegant and versatile leather crossbody bag for women.",
+        "category": "Fashion",
+        "image": "/leather_crossbody.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 130
+        }
+      },
+      {
+        "id": 92,
+        "title": "Kids' Light-Up Sneakers",
+        "price": 39.99,
+        "description": "Fun and comfy light-up sneakers for kids.",
+        "category": "Kids",
+        "image": "/kids_lightup_sneakers.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 140
+        }
+      },
+      {
+        "id": 93,
+        "title": "Men's Leather Belt",
+        "price": 34.99,
+        "description": "Durable leather belt, perfect for both casual and formal wear.",
+        "category": "Men",
+        "image": "/mens_leather_belt.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 55
+        }
+      },
+      {
+        "id": 94,
+        "title": "Women's Oversized Sunglasses",
+        "price": 49.99,
+        "description": "Oversized sunglasses with polarized lenses for maximum sun protection.",
+        "category": "Fashion",
+        "image": "/womens_oversized_sunglasses.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+      {
+        "id": 95,
+        "title": "Girls' Ruffle Dress",
+        "price": 29.99,
+        "description": "Adorable ruffle dress for girls, perfect for any occasion.",
+        "category": "Kids",
+        "image": "/girls_ruffle_dress.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 85
+        }
+      },
+      {
+        "id": 96,
+        "title": "Men's Polo Shirt",
+        "price": 44.99,
+        "description": "Classic men's polo shirt with a slim fit design.",
+        "category": "Men",
+        "image": "/mens_polo_shirt.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 110
+        }
+      },
+      {
+        "id": 97,
+        "title": "Women's Gold Chain Necklace",
+        "price": 89.99,
+        "description": "Luxurious gold chain necklace, ideal for layering.",
+        "category": "Fashion",
+        "image": "/gold_chain_necklace.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 95
+        }
+      },
+      {
+        "id": 98,
+        "title": "Kids' Dinosaur Hoodie",
+        "price": 35.99,
+        "description": "Cute dinosaur-themed hoodie for kids.",
+        "category": "Kids",
+        "image": "/kids_dinosaur_hoodie.png",
+        "rating": {
+          "rate": 4.7,
+          "count": 60
+        }
+      },
+      {
+        "id": 99,
+        "title": "Women's Striped Jumpsuit",
+        "price": 69.99,
+        "description": "Trendy striped jumpsuit for a chic and effortless look.",
+        "category": "Women",
+        "image": "/womens_jumpsuit.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 70
+        }
+      },
+      {
+        "id": 100,
+        "title": "Men's Casual Sneakers",
+        "price": 59.99,
+        "description": "Comfortable and stylish sneakers for men.",
+        "category": "Men",
+        "image": "/mens_casual_sneakers.png",
+        "rating": {
+          "rate": 4.6,
+          "count": 80
+        }
+      },
+      {
+        "id": 101,
+        "title": "Boys' Cargo Shorts",
+        "price": 24.99,
+        "description": "Durable and comfy cargo shorts for boys.",
+        "category": "Kids",
+        "image": "/boys_cargo_shorts.png",
+        "rating": {
+          "rate": 4.5,
+          "count": 40
+        }
+      },
+      {
+        "id": 102,
+        "title": "Men's Leather Wallet",
+        "price": 39.99,
+        "description": "Sleek and functional leather wallet with multiple card slots.",
+        "category": "Men",
+        "image": "/mens_leather_wallet.png",
+        "rating": {
+          "rate": 4.8,
+          "count": 75
+        }
+      },
+      {
+        "id": 103,
+        "title": "Women's Sequin Party Dress",
+        "price": 89.99,
+        "description": "Shimmering sequin dress perfect for parties and special occasions.",
+        "category": "Women",
+        "image": "/womens_sequin_party_dress.png",
+        "rating": {
+          "rate": 4.9,
+          "count": 60
+        }
       }
-    ]
-  }
+    
   
+  
+]
+}

@@ -17,7 +17,7 @@ const Products = () => {
       try {
         const response = await axios.get(`${API_URL}/api/products/`, {
           headers: {
-            Authorization: `Token ${userToken}`,
+            'Content-Type': 'application/json',
           },
         });
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiLock, FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 
@@ -38,7 +38,6 @@ const Login = () => {
 
       const data = await response.json();
 
-      // Check if the login request was successful
       if (response.ok && data.token) {
         localStorage.setItem('token', data.token);  // Store token in localStorage
         console.log('Login successful:', data);
@@ -54,6 +53,11 @@ const Login = () => {
       setLoading(false);  // Stop loading spinner
     }
   };
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 lg:mt-[3rem]">

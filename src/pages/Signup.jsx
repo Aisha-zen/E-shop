@@ -59,7 +59,7 @@ const Signup = () => {
         setSuccess('Signup successful! Redirecting to homepage...');
         setErrors({});
         setTimeout(() => {
-          navigate('/');
+          navigate('/user');
         }, 2000);
       }
     } catch (error) {

@@ -16,7 +16,7 @@ import Wishlist from './pages/Wishlist';
 import PurchaseComplete from './pages/PurchaseComplete';
 import PaymentDetails from './pages/PaymentDetails';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import UserInfo from './pages/UserInfo';
 const App = () => {
 
 
@@ -30,12 +30,13 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path='/user' element={<UserInfo />}/>
 
         {/* Protected Routes */}
             <Route path="/products" element={<ProtectedRoute element={<Products />} />} />
             <Route path="/products/:id" element={<ProtectedRoute element={<ProductDetail />} />} />
             <Route path="/checkout" element={<ProtectedRoute element={<Checkout />} />} />
-\            <Route path="/about" element={<ProtectedRoute element={<About />} />} />
+            <Route path="/about" element={<ProtectedRoute element={<About />} />} />
             <Route path="/contact" element={<ProtectedRoute  element={<Contact />} />} />
             <Route path="/category/:categoryName" element={<ProtectedRoute element={<CategoryPage />} />} />
             <Route path="/cart" element={<ProtectedRoute element={<Cart />} />} />
