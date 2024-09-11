@@ -42,6 +42,11 @@ const CategoryPage = () => {
   const formattedCategoryName = categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
   const productCount = filteredProducts.length;
 
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container my-[7rem] mx-auto mt-40 lg:mt-[8rem]">
        <h2 className="lg:text-3xl text-2xl font-bold mb-4 mx-10">
